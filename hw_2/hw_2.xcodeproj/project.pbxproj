@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3B98FA32A8241E20003B599 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B98FA22A8241E20003B599 /* AppDelegate.swift */; };
+		D31317332A863EA900432407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31317322A863EA800432407 /* AppDelegate.swift */; };
 		D3B98FA52A8241E20003B599 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B98FA42A8241E20003B599 /* SceneDelegate.swift */; };
 		D3B98FA72A8241E20003B599 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B98FA62A8241E20003B599 /* ViewController.swift */; };
 		D3B98FAC2A8241E30003B599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B98FAB2A8241E30003B599 /* Assets.xcassets */; };
@@ -23,8 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D31317322A863EA800432407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B98F9F2A8241E20003B599 /* hw_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3B98FA22A8241E20003B599 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B98FA42A8241E20003B599 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D3B98FA62A8241E20003B599 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3B98FAB2A8241E30003B599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		D3B98FA12A8241E20003B599 /* hw_2 */ = {
 			isa = PBXGroup;
 			children = (
-				D3B98FA22A8241E20003B599 /* AppDelegate.swift */,
+				D31317322A863EA800432407 /* AppDelegate.swift */,
 				D3B98FA42A8241E20003B599 /* SceneDelegate.swift */,
 				D3B98FA62A8241E20003B599 /* ViewController.swift */,
 				D3B98FAB2A8241E30003B599 /* Assets.xcassets */,
@@ -158,13 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D31317332A863EA900432407 /* AppDelegate.swift in Sources */,
 				D3B98FBF2A8255DA0003B599 /* FriendsViewController.swift in Sources */,
 				D3D97B132A8545C600E4C5C3 /* GroupsModel.swift in Sources */,
 				D3B98FA72A8241E20003B599 /* ViewController.swift in Sources */,
 				D3B98FC32A8268AD0003B599 /* CustomTableViewCellGroups.swift in Sources */,
 				D3B98FC12A8255F50003B599 /* GroupCell.swift in Sources */,
 				D3D97AEB2A85265B00E4C5C3 /* NetworkService.swift in Sources */,
-				D3B98FA32A8241E20003B599 /* AppDelegate.swift in Sources */,
 				D3B98FB92A8249360003B599 /* CustomTableViewCellName.swift in Sources */,
 				D3B98FBB2A8251060003B599 /* ViewController3.swift in Sources */,
 				D3B98FA52A8241E20003B599 /* SceneDelegate.swift in Sources */,

@@ -28,21 +28,6 @@ class ViewController: UIViewController {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 extension ViewController: WKNavigationDelegate {
     private func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
             guard let url = navigationResponse.response.url, url.path ==

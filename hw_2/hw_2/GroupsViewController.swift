@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class GroupCell: UITableViewController {
+class GroupsViewController: UITableViewController {
     
     private var networkService = NetworkService()
 
@@ -29,7 +29,7 @@ class GroupCell: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        CustomTableViewCellGroups()
+        GroupsCell()
     }
     
 }

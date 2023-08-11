@@ -69,7 +69,17 @@ private extension ViewController {
         for element in controllers {
             element.tabBarItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 25.0, weight: .regular)], for: .normal)
         }
-        tabBarController.viewControllers = controllers
-        navigationController?.pushViewController(tabBarController, animated: true)
+        
+//        tabBarController.viewControllers = controllers
+//        navigationController?.pushViewController(tabBarController, animated: true)
+        
+        
+        
+        guard let firstScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let firstWindow = firstScene.windows.first else {
+            return
+        }
+        
+        firstWindow.rootViewController = tabBarController
     }
 }

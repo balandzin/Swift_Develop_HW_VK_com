@@ -8,5 +8,24 @@
 import Foundation
 
 struct PhotosModel: Codable {
-    var album_id: String
+    var name: String
+    var surname: String
+    
+    struct PhotosModel: Decodable {
+        
+        var response: Photos
+        
+    }
+    
+    struct DataPhotos: Decodable {
+        var sizes: [Sizes]
+    }
+    
+    struct Sizes: Decodable {
+        var url: String
+    }
+    
+    struct Photos: Decodable {
+        var items: [DataPhotos]
+    }
 }

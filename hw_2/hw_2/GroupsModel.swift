@@ -8,5 +8,19 @@
 import Foundation
 
 struct GroupsModel: Codable {
-    var extended: Int
+    var name: String
+    var surname: String
+    
+    struct GroupsModel: Decodable {
+        var response: Groups
+    }
+    
+    struct DataGroups: Decodable {
+        var description: String?
+        var name: String
+    }
+    
+    struct Groups: Decodable {
+        var items: [DataGroups]
+    }
 }

@@ -10,6 +10,8 @@ import Foundation
 
 
 class PhotosViewController: UICollectionViewController {
+    private var networkService = NetworkService()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,7 @@ class PhotosViewController: UICollectionViewController {
         title = "Photos"
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier:
         Constants.Identifier.photoCellIdentifier)
+        networkService.getPhotos()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

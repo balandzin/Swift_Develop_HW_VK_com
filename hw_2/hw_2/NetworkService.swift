@@ -14,7 +14,7 @@ final class NetworkService {
     static var userID = ""
     
     func getFriends() {
-        let url = URL(string:   "https://api.vk.com/method/users.get?user_ids=51726206&fields=nickname HTTP/1.1")
+        let url = URL(string: "https://api.vk.com/method/users.get?user_ids=51726827&fields=nickname HTTP/1.1")
 
         guard let url else {
             return
@@ -36,7 +36,7 @@ final class NetworkService {
     
     
     func getGroups() {
-        let url = URL(string: "https://api.vk.com/method/users.get?user_ids=51726206&extended=1")
+        let url = URL(string: "https://api.vk.com/method/groups.get?user_ids=51726827&extended=1")
 
         guard let url else {
             return
@@ -55,6 +55,28 @@ final class NetworkService {
             }
         }.resume()
     }
+    
+    func getPhotos() {
+        let url = URL(string: "https://api.vk.com/method/photos.get?fields=bdate&access_token=\(NetworkService.token)&v=5.131&album_id=profile")
+
+        guard let url else {
+            return
+        }
+        
+        session.dataTask(with: url) { (data, response, error) in
+            guard let data else {
+                return
+            }
+            do {
+                let extended = try
+                    JSONDecoder().decode(PhotosModel.self, from: data)
+                print(extended)
+            } catch {
+                print(error)
+            }
+        }.resume()
+    }
+    
 }
 
 

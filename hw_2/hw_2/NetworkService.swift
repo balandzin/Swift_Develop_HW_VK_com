@@ -7,8 +7,15 @@
 
 import Foundation
 
+protocol NetworkServiceDelegate: AnyObject {
+    func updateTable(models: FriendsModel)
+}
+
 final class NetworkService {
+    
     private let session = URLSession.shared
+    
+    weak var delegate: NetworkServiceDelegate?
     
     static var token = ""
     static var userID = ""
@@ -27,7 +34,8 @@ final class NetworkService {
             do {
                 let nickname = try
                     JSONDecoder().decode(FriendsModel.self, from: data)
-                print(nickname)
+                self.delegate?.updateTable(models: nickname)
+                
             } catch {
                 print(error)
             }
@@ -47,9 +55,9 @@ final class NetworkService {
                 return
             }
             do {
-                let extended = try
+                let name = try
                     JSONDecoder().decode(GroupsModel.self, from: data)
-                print(extended)
+                print(name)
             } catch {
                 print(error)
             }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkServiceDelegate: AnyObject {
-    func updateTable(models: FriendsModel)
+    func updateTable(models: [FriendsModel])
 }
 
 final class NetworkService {
@@ -35,6 +35,7 @@ final class NetworkService {
                 let nickname = try
                     JSONDecoder().decode(FriendsModel.self, from: data)
                 self.delegate?.updateTable(models: nickname)
+                print(nickname)
                 
             } catch {
                 print(error)

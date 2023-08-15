@@ -20,7 +20,9 @@ class FriendsViewController: UITableViewController {
         
         tableView.register(FriendsCell.self, forCellReuseIdentifier: "FrieindsCell")
         
+        networkService.delegate = self
         networkService.getFriends()
+        
     }
     
 //    override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,5 +46,14 @@ class FriendsViewController: UITableViewController {
         
         cell.setupTextFriends(friend: model)
         return cell
+    }
+}
+
+extension FriendsViewController: NetworkServiceDelegate {
+    func updateTable(models: [FriendsModel]) {
+        self.models = models
+        DispatchQueue.main.async {
+            self.tableView.reloadData ()
+        }
     }
 }

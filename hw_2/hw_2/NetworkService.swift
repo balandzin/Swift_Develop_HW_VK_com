@@ -33,7 +33,7 @@ final class NetworkService {
             }
             do {
                 let nickname = try
-                    JSONDecoder().decode(FriendsModel.self, from: data)
+                    JSONDecoder().decode([FriendsModel].self, from: data)
                 self.delegate?.updateTable(models: nickname)
                 print(nickname)
                 

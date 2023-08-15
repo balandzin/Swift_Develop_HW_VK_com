@@ -11,21 +11,21 @@ struct PhotosModel: Codable {
     var name: String
     var surname: String
     
-    struct PhotosModel: Decodable {
+    struct PhotosModel: Codable {
         
         var response: Photos
         
     }
     
-    struct DataPhotos: Decodable {
+    struct DataPhotos: Codable {
         var sizes: [Sizes]
     }
     
-    struct Sizes: Decodable {
+    struct Sizes: Codable {
         var url: String
     }
     
-    struct Photos: Decodable {
+    struct Photos: Codable {
         var items: [DataPhotos]
     }
 }

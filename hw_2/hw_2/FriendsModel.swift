@@ -7,23 +7,23 @@
 
 import Foundation
 
-struct FriendsModel: Decodable {
+struct FriendsModel: Codable {
 
-        var response: Friends
+    var response: Friends
 
-    }
-
-    struct DataFriend: Decodable {
-        var nickname: String?
-        var avatar: String
-
-
-        enum CodingKeys: String, CodingKey {
-            case nickname
-            case avatar = "photo_50"
         }
-    }
 
-struct Friends: Decodable {
-    var items: [DataFriend]
+        struct DataFriend: Codable {
+            var nickname: String?
+            var avatar: String
+
+
+            enum CodingKeys: String, CodingKey {
+                case nickname
+                case avatar = "photo_50"
+            }
+        }
+
+    struct Friends: Codable {
+        var items: [DataFriend]
 }

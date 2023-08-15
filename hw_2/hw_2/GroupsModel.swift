@@ -11,16 +11,16 @@ struct GroupsModel: Codable {
     var name: String
     var surname: String
     
-    struct GroupsModel: Decodable {
+    struct GroupsModel: Codable {
         var response: Groups
     }
     
-    struct DataGroups: Decodable {
+    struct DataGroups: Codable {
         var description: String?
         var name: String
     }
     
-    struct Groups: Decodable {
+    struct Groups: Codable {
         var items: [DataGroups]
     }
 }

@@ -11,11 +11,15 @@ import UIKit
 class FriendsViewController: UITableViewController {
     
     private var networkService = NetworkService()
+    private var models: [FriendsModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Friends"
-        view.backgroundColor = UIColor.white
+        tableView.backgroundColor = UIColor.white
+        
+        tableView.register(FriendsCell.self, forCellReuseIdentifier: "FrieindsCell")
+        
         networkService.getFriends()
     }
     
@@ -28,6 +32,8 @@ class FriendsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        FriendsCell()
+        
+        //????FriendsCell.setupTextFriends(<#T##self: FriendsCell##FriendsCell#>)
+       FriendsCell()
     }
 }

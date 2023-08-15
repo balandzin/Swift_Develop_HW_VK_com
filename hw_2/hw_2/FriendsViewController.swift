@@ -23,19 +23,16 @@ class FriendsViewController: UITableViewController {
         networkService.getFriends()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        5
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        5
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         models.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-        
-        
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier:
         "FrieindsCell", for: indexPath)
       

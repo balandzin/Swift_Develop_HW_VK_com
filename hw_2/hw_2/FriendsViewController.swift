@@ -28,12 +28,24 @@ class FriendsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        models.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
         
-        //????FriendsCell.setupTextFriends(<#T##self: FriendsCell##FriendsCell#>)
-       FriendsCell()
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier:
+        "FrieindsCell", for: indexPath)
+      
+        let model = models[indexPath.row]
+        
+        guard let cell = cell as? FriendsCell else {
+        return UITableViewCell()
+        }
+        
+        cell.setupTextFriends(friend: model)
+        return cell
     }
 }

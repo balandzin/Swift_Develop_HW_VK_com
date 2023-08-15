@@ -63,5 +63,12 @@ final class FriendsCell: UITableViewCell {
             
         ])
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        text1.text = nil
+    }
+    
+    
 }
 

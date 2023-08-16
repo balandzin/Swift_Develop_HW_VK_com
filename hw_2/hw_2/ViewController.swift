@@ -42,7 +42,7 @@ class ViewController: UIViewController {
             element.tabBarItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 25.0, weight: .regular)], for: .normal)
         }
         
-//        tabBarController.viewControllers = controllers
+        tabBarController.viewControllers = controllers
 //        navigationController?.pushViewController(tabBarController, animated: true)
         
         

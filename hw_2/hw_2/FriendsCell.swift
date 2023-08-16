@@ -54,12 +54,11 @@ final class FriendsCell: UITableViewCell {
             circle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             circle.heightAnchor.constraint(equalToConstant: 50),
             circle.widthAnchor.constraint(equalTo: circle.heightAnchor),
-            circle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-
-            text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            
+            text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
             text.leadingAnchor.constraint(equalTo: circle.trailingAnchor, constant: 30),
             text.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
-            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30)
             
         ])
     }

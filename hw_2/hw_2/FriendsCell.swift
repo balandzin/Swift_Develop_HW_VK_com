@@ -8,6 +8,7 @@
 import UIKit
 
 final class FriendsCell: UITableViewCell {
+    
     private var circle: UIImageView = {
         let circle = UIImageView()
         circle.backgroundColor = .green
@@ -15,16 +16,16 @@ final class FriendsCell: UITableViewCell {
         return circle
     }()
     
-    private var text1: UILabel = {
+    private var text: UILabel = {
         let label = UILabel()
         label.text = "Name"
         label.textColor = .black
         return label
     }()
     
-    func setupTextFriends(friend: FriendsModel) {
-        text1.text = friend.nickname
-    }
+//    func setupTextFriends(friend: FriendsModel) {
+//        text1.text = friend.nickname
+//    }
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -39,14 +40,13 @@ final class FriendsCell: UITableViewCell {
     
     private func setupViews() {
         contentView.addSubview(circle)
-        contentView.addSubview(text1)
-
+        contentView.addSubview(text)
         setupConstraints()
     }
     
     private func setupConstraints() {
         circle.translatesAutoresizingMaskIntoConstraints = false
-        text1.translatesAutoresizingMaskIntoConstraints = false
+        text.translatesAutoresizingMaskIntoConstraints = false
 
         
         NSLayoutConstraint.activate([
@@ -56,18 +56,18 @@ final class FriendsCell: UITableViewCell {
             circle.widthAnchor.constraint(equalTo: circle.heightAnchor),
             circle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
 
-            text1.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            text1.leadingAnchor.constraint(equalTo: circle.trailingAnchor, constant: 30),
-            text1.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
-            text1.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            text.leadingAnchor.constraint(equalTo: circle.trailingAnchor, constant: 30),
+            text.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
+            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
             
         ])
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        text1.text = nil
-    }
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        text.text = nil
+//    }
     
     
 }

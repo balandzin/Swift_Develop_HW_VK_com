@@ -16,20 +16,20 @@ class GroupsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Groups"
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = .white
+        tableView.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.barTintColor = .black
         networkService.getGroups()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        5
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        5
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         GroupsCell()
     }
+
     
 }

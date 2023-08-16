@@ -11,49 +11,52 @@ import UIKit
 class FriendsViewController: UITableViewController {
     
     private var networkService = NetworkService()
-    private var models: [FriendsModel] = []
+    //private var models: [FriendsModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Friends"
-        tableView.backgroundColor = UIColor.white
-        
-        tableView.register(FriendsCell.self, forCellReuseIdentifier: "FrieindsCell")
-        
-        networkService.delegate = self
+        view.backgroundColor = .white
+        tableView.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.barTintColor = .white
         networkService.getFriends()
+        
+        
+        //networkService.delegate = self
         
     }
     
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        5
-//    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        models.count
+        5
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        FriendsCell()
+    
+        
 
-        let cell = tableView.dequeueReusableCell(withIdentifier:
-        "FrieindsCell", for: indexPath)
-      
-        let model = models[indexPath.row]
+//        let cell = tableView.dequeueReusableCell(withIdentifier:
+//        "FrieindsCell", for: indexPath)
+//
+//        let model = models[indexPath.row]
+//
+//        guard let cell = cell as? FriendsCell else {
+//        return UITableViewCell()
+//        }
+//
+//        cell.setupTextFriends(friend: model)
+//        return cell
         
-        guard let cell = cell as? FriendsCell else {
-        return UITableViewCell()
-        }
         
-        cell.setupTextFriends(friend: model)
-        return cell
     }
 }
 
-extension FriendsViewController: NetworkServiceDelegate {
-    func updateTable(models: [FriendsModel]) {
-        self.models = models
-        DispatchQueue.main.async {
-            self.tableView.reloadData ()
-        }
-    }
-}
+//extension FriendsViewController: NetworkServiceDelegate {
+//    func updateTable(models: [FriendsModel]) {
+//        self.models = models
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData ()
+//        }
+//    }
+//}

@@ -12,53 +12,41 @@ protocol NetworkServiceDelegate: AnyObject {
 }
 
 final class NetworkService {
-    
     private let session = URLSession.shared
-    
-    weak var delegate: NetworkServiceDelegate?
     
     static var token = ""
     static var userID = ""
     
     func getFriends() {
-        let url = URL(string: "https://api.vk.com/method/friends.get?fields=nickname,photo_50&access_token=\(NetworkService.token)&v=5.131")
-
-        guard let url else {
+        guard let url = URL(string: "https://api.vk.com/method/friends.get?fields=photo_50&access_token=\(NetworkService.token)&v=5.131") else {
             return
         }
-        
-        session.dataTask(with: url) { (data, response, error) in
-            guard let data else {
+
+        session.dataTask(with: url) { (data, _, error) in
+            guard let data = data else {
                 return
             }
             do {
-                let nickname = try
-                    JSONDecoder().decode([FriendsModel].self, from: data)
-                self.delegate?.updateTable(models: nickname)
-                print(nickname)
-                
+                 let friends = try JSONDecoder().decode(FriendsModel.self, from: data)
+                print(friends)
             } catch {
                 print(error)
             }
         }.resume()
     }
     
-    
     func getGroups() {
-        let url = URL(string: "https://api.vk.com/method/groups.get?fields=description&extended=1&access_token=\(NetworkService.token)&v=5.131")
-
-        guard let url else {
+        guard let url = URL(string: "https://api.vk.com/method/groups.get?access_token=\(NetworkService.token)&fields=description&v=5.131&extended=1") else {
             return
         }
-        
-        session.dataTask(with: url) { (data, response, error) in
-            guard let data else {
+
+        session.dataTask(with: url) { (data, _, error) in
+            guard let data = data else {
                 return
             }
             do {
-                let name = try
-                    JSONDecoder().decode(GroupsModel.self, from: data)
-                print(name)
+                let groups = try JSONDecoder().decode(GroupsModel.self, from: data)
+                print(groups)
             } catch {
                 print(error)
             }
@@ -66,26 +54,22 @@ final class NetworkService {
     }
     
     func getPhotos() {
-        let url = URL(string: "https://api.vk.com/method/photos.get?fields=bdate&access_token=\(NetworkService.token)&v=5.131&album_id=profile")
-
-        guard let url else {
+        guard let url = URL(string: "https://api.vk.com/method/photos.get?fields=bdate&access_token=\(NetworkService.token)&v=5.131&album_id=profile") else {
             return
         }
-        
-        session.dataTask(with: url) { (data, response, error) in
-            guard let data else {
+
+        session.dataTask(with: url) { (data, _, error) in
+            guard let data = data else {
                 return
             }
             do {
-                let extended = try
-                    JSONDecoder().decode(PhotosModel.self, from: data)
-                print(extended)
+                let photos = try JSONDecoder().decode(PhotosModel.self, from: data)
+                print(photos)
             } catch {
                 print(error)
             }
         }.resume()
     }
-    
 }
 
 

@@ -11,6 +11,7 @@ import UIKit
 final class GroupsCell: UITableViewCell {
     
     private var networkService = NetworkService()
+    
     private var circle: UIImageView = {
         let circle = UIImageView()
         circle.backgroundColor = .green
